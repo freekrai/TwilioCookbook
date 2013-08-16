@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Gather action="iamhuman.xml">
+        <Say>Press any key to accept this call</Say>
+    </Gather>
+    <Hangup/>
+</Response>

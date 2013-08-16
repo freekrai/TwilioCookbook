@@ -1,0 +1,12 @@
+{
+    "name" : "Call Flow Test",
+    "description" : "Call Flow Test",
+    "links" : [
+        {
+            "url" : "callflowtest",
+            "script" : "plugin.php",
+            "label" : "Test Call Flow",
+            "menu" : "admin"
+        }
+    ]
+}

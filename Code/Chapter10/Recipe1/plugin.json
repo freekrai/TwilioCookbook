@@ -1,0 +1,10 @@
+{ 
+	"name" : "Call Log",
+	"description" : "This displays a list of all the calls and sms that have been made or received.",
+	"links" : [{
+		"menu" : "Call Log",
+		"url" : "call_log",
+		"script" : "call_log.php",
+		"label" : "Call Log"
+	}]
+}

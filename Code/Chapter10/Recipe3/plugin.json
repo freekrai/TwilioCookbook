@@ -1,0 +1,10 @@
+{
+	"name" : "Stripe",
+	"description" : "Take payments over the phone using stripe.com",
+	"links" : [{
+		"menu" : "Stripe",
+		"url" : "stripe",
+		"script" : "stripe.php",
+		"label" : "Settings"
+	}]
+}

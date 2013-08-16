@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+	<Gather action="screen.php" numDigits="1">
+		<Say>You have an incoming call.</Say>
+		<Say>To accept the call, press 1.</Say>
+		<Say>To reject the call, press any other key.</Say>
+	</Gather>
+	<!-- If customer doesn't input anything, prompt and try again. -->
+	<Say>Sorry, I didn't get your response.</Say>
+	<Redirect>screen-caller.xml</Redirect>
+</Response>

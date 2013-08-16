@@ -1,0 +1,8 @@
+{
+	"name" : "Orders",
+	"sms_name" : "Orders",
+	"voice_title" : "Orders",
+	"sms_title" : "Orders",
+	"description" : "Take a credit card payment.",
+	"type" : ["voice","sms"]
+}

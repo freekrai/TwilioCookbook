@@ -1,0 +1,10 @@
+{
+	"name" : "Orders",
+	"description" : "Allows order tracking over the phone",
+	"links" : [{
+		"menu" : "Order Tracker",
+		"url" : "orders",
+		"script" : "orders.php",
+		"label" : "Orders"
+	}]
+}
