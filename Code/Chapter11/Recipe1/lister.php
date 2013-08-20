@@ -4,7 +4,7 @@
 	include("functions.php");
 
 	$pdo = Db::singleton();
-	$sql = 'select * from callog ORDER BY ID DESC';
+	$sql = 'select * from call_log ORDER BY ID DESC';
 	$res = $pdo->query( $sql );
 ?>
 	<table width=100%>

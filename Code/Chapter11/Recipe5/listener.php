@@ -11,10 +11,10 @@
 	if( !is_banned($from,$blacklist) ){
 		$good = 1;
 		if( !is_allowed($from,$whitelist) ){
-			$body = censorString( $_POST['Body'] );
+			$body = censorString( cleanVar($_POST['Body'],'text') );
 			$good = 0;
 		}else{
-			$body = $_POST['Body'];
+			$body = cleanVar($_POST['Body'],'text');
 		}
 		if( isset($_POST['ContentUrls']) ){
 			$media = $_POST['ContentUrls'];
@@ -34,6 +34,6 @@
 			}
 		}
 		if( $good ){
-			$res = $pdo->query("INSERT INTO callog SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");
+			$res = $pdo->query("INSERT INTO call_log SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");
 		}
 	}

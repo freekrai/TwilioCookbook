@@ -7,7 +7,7 @@
 	if($_SERVER['HTTP_X_REQUESTED_WITH']==''){
 		include("header.php");
 	}
-	$sql = 'select * from callog ORDER BY ID DESC';
+	$sql = 'select * from call_log ORDER BY ID DESC';
 	$res = $pdo->query( $sql );
 	$items = array();
 	while( $row = $res->fetch() ){

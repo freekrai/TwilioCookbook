@@ -4,8 +4,8 @@
 	include("functions.php");
 	
 	$pdo = Db::singleton();
-	$body = $_POST['Body'];
-	$from = $_POST['From'];
+	$body = cleanVar($_POST['Body'],'text');
+	$from = cleanVar($_POST['From'],'phone');
 	$media = '';
 	if( isset($_POST['ContentUrls']) ){
 		$media = $_POST['ContentUrls'];
@@ -13,4 +13,4 @@
 			$media = cache_image( $media,$id );
 		}
 	}
-	$res = $pdo->query("INSERT INTO callog SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");
+	$res = $pdo->query("INSERT INTO call_log SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");

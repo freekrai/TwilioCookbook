@@ -6,8 +6,8 @@
 	
 	$pdo = Db::singleton();
 	
-	$body = censorString( $_POST['Body'] );
-	$from = $_POST['From'];
+	$body = censorString( cleanVar($_POST['Body'],'text') );
+	$from = cleanVar($_POST['From'],'phone');
 	$media = '';
 	if( isset($_POST['ContentUrls']) ){
 		$media = $_POST['ContentUrls'];
@@ -19,7 +19,7 @@
 				if($score >= 30){
 					unlink( $media );
 				}else{
-					$res = $pdo->query("INSERT INTO callog SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");
+					$res = $pdo->query("INSERT INTO call_log SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");
 				}
 			}
 		}

@@ -11,7 +11,6 @@ function file_get_contents_curl($url) {
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16');
 	$data = curl_exec($ch);
 	curl_close($ch);
 	
@@ -26,4 +25,17 @@ function get_image_extension($filename) {
 	$ext = $ext[0];
 	$ext = explode("/",$ext);
 	return end($ext);
+}
+function cleanVar($retVal,$type=''){
+	switch($type){
+		case 'phone':
+			$retVal = preg_replace("/[^0-9]/", "", $retVal);
+			break;
+		case 'text':
+		default:
+			$retVal = urldecode($retVal);
+			$retVal = preg_replace("/[^A-Za-z0-9 ,']/", "", $retVal);
+			break;
+	}
+	return $retVal;
 }

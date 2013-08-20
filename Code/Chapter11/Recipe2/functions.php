@@ -29,3 +29,16 @@
 			return $output;
 		}
 	}
+	function cleanVar($retVal,$type=''){
+		switch($type){
+			case 'phone':
+				$retVal = preg_replace("/[^0-9]/", "", $retVal);
+				break;
+			case 'text':
+			default:
+				$retVal = urldecode($retVal);
+				$retVal = preg_replace("/[^A-Za-z0-9 ,']/", "", $retVal);
+				break;
+		}
+		return $retVal;
+	}
