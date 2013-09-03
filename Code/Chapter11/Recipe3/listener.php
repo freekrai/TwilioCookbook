@@ -7,8 +7,8 @@
 	$body = cleanVar($_POST['Body'],'text');
 	$from = cleanVar($_POST['From'],'phone');
 	$media = '';
-	if( isset($_POST['MediaUrls']) ){
-		foreach( $_POST['MediaUrls'] as $media ){
+	foreach($_POST as $k=>$media){
+		if (stristr($k,'MediaUrl') ){
 			if( isset($media) && !empty($media) ){
 				$media = cache_image( $media,$id );
 				$res = $pdo->query("INSERT INTO callog SET msg='{$body}',phonenumber='{$from}',photo='{$media}',type='s'");

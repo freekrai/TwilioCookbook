@@ -52,7 +52,7 @@
 			$data["To"]=$to;
 			$data['From']=$from;
 			$data['Body']=$body;
-			$data['MediaUrls']=$murl;
+			$data['MediaUrl']=$murl;
 			$ch = curl_init();
 			$timeout=5;
 			curl_setopt($ch,CURLOPT_URL,$url);
