@@ -16,8 +16,11 @@
 		}else{
 			$body = cleanVar($_POST['Body'],'text');
 		}
-		foreach($_POST as $k=>$media){
-			if (stristr($k,'MediaUrl') ){
+		$numMedia = $_POST['NumMedia'];
+		if( $numMedia > 0 ){
+			for ($i = 0; $i <= $numMedia; $i++) {
+				$key = 'MediaUrl'.$i;
+				$media = $_POST[$key];
 				if( isset($media) && !empty($media) ){
 					$media = cache_image( $media,$id );
 					if( is_allowed($from,$whitelist) ){
