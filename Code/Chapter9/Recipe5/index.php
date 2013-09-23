@@ -58,7 +58,7 @@ $app->get('/phone-number', function() use ($app){
 	$app->render('phone-number');
 });
 
-$app->post("search", function() use ($app){
+$app->post("/search", function() use ($app){
 	$app->condition('signed_in');
 	$user = get_user( $app->store('user') );
 	$client = new Services_Twilio($user['sid'], $user['token']);
@@ -81,7 +81,7 @@ $app->post("search", function() use ($app){
 	$app->render('search',array('numbers'=>$numbers));
 });
 
-$app->post("buy", function() use ($app){
+$app->post("/buy", function() use ($app){
 	$app->condition('signed_in');
 	$user = get_user( $app->store('user') );
 	$client = new Services_Twilio($user['sid'], $user['token']);
@@ -110,7 +110,6 @@ $app->post("buy", function() use ($app){
 		exit(0);
 	}
 	$msg = urlencode("Thank you for purchasing $PhoneNumber");
-	header("Location: index.php?msg=$msg");
 	$app->redirect( $app->getBaseUri().'/home?msg='.$msg);
 	exit(0);
 });
