@@ -14,7 +14,7 @@
 <table>
 <?php
 	$limit = 6;
-	for($i = 0;$i < $limit;$++){
+	for($i = 0;$i < $limit;$i++){
 ?>
 	<tr>
 		<td>Name</td>

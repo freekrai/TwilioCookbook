@@ -3,6 +3,8 @@ include("config.php");
 include("pdo.class.php");
 include 'Services/Twilio.php';
 
+$client = new Services_Twilio($accountsid, $authtoken);
+
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 
 switch($action){
@@ -17,10 +19,13 @@ switch($action){
 			foreach($call_name as $k=>$cname){
 				$cphone = $call_phone[$k];
 				$cstatus = $call_status[$k];
-				$sql = "INSERT INTO callers SET conference_id = '{$qid}',`name` = '{$cname}',`phone_number' = '{$cphone}',status='{$cstatus}'";
+				$sql = "INSERT INTO callers SET conference_id = '{$qid}',`name` = '{$cname}',`phone_number` = '{$cphone}',status='{$cstatus}'";
 				$pdo->exec($sql);
 			}
+			header("Location:schedule.php");
+			exit;
 		}
+		header("Location:schedule.php?action=addnew");
 		break;
 	case 'addnew':
 		include("form.php");

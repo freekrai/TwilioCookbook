@@ -1,7 +1,13 @@
+<?php
+if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])){
+	header("Location: schedule.php");
+}
+?>
 <a href="schedule.php?action=addnew">Schedule new conference</a><hr />
 <h2>Conferences</h2>
 <table width=100%>
 <?php
+	$pdo = Db::singleton();
 	$res = $pdo->query("SELECT * FROM conference ORDER BY `timestamp`");
 	while( $row = $res->fetch() ){
 		$conference = $client->account->conferences->getIterator(0, 50, array("FriendlyName" => $row['ID']));
