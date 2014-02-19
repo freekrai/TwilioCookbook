@@ -1,6 +1,6 @@
 <?php
 function get_usage( $action ){
-	global $accountsid;
+	global $accountsid,$authtoken;
 	$results = array();
 	$fields = array();
 	$url = "https://api.twilio.com/2010-04-01/Accounts/{$accountsid}/Usage/Records";

@@ -42,7 +42,10 @@
 		</tr>
 		</thead>
 		<tbody>
-<?php	foreach( $results->usage_records as $row ){	?>
+<?php	
+		if( count($results->usage_records) > 0 ){
+			foreach( $results->usage_records as $row ){
+?>
 		<tr>
 			<td><?= $row->category?></td>
 			<td><?= $row->description?></td>
@@ -54,7 +57,10 @@
 			<td><?= $row->price?></td>
 			<td><?= $row->price_unit?></td>
 		</tr>
-<?php 	}	?>
+<?php 	
+		}
+			}
+?>
 		</tbody>
 		</table>
 <?php
