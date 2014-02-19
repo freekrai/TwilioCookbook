@@ -9,7 +9,11 @@
 		header("Location: click-to-call.php?msg=$err");
 		die;
 	}
-	$call = $client->account->calls->create($fromNumber, $toNumber, 'callback.php?number=' . $_REQUEST['called']);
+
+	$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+	$url = str_replace("makecall.php","",$url);
+
+	$call = $client->account->calls->create($fromNumber, $toNumber, $url.'/callback.php?number=' . $_REQUEST['called']);
 	$msg = urlencode("Connecting... ".$call->sid);
 	header("Location: click-to-call.php?msg=$msg");
 ?>
