@@ -22,7 +22,7 @@
 	</nav>
 	<hr />
 <?php
-	$results = get_usage($action){
+	$results = get_usage($action);
 
 	if( count($results > 0) ){
 #		echo '<pre>'.print_r($results,true).'</pre>';
