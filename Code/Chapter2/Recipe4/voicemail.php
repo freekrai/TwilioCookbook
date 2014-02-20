@@ -38,7 +38,7 @@
 	} else {
 		$response->say( $message );
 		if( $transcribe )
-			$params = array("transcribe"=>"true", "transcribeCallback"=>"{$_SERVER['SCRIPT_URI']}");
+			$params = array("transcribe"=>"true", "transcribeCallback"=>"{$_SERVER['REQUEST_URI']}");
 		else
 			$params = array();
 		$response->record($params);
