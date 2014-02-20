@@ -38,7 +38,7 @@
 	} else {
 		$response->say( $message );
 		if( $transcribe )
-			$params = array("transcribe"=>"true", "transcribeCallback"=>"{$_SERVER['REQUEST_URI']}");
+			$params = array("transcribe"=>"true", "transcribeCallback"=>"voicemail.php");
 		else
 			$params = array();
 		$response->record($params);
