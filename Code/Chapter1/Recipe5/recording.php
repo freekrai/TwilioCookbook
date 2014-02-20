@@ -22,7 +22,7 @@
 	        echo "<tr>";
 	        echo "<td>".$recording->Duration." seconds</td>";
 	        echo "<td>".$recording->DateCreated."</td>";
-	        echo '<td><audio src="https://api.twilio.com/2010-04-01/Accounts/'.$sid.'/Recordings/'.$recording->Sid.'.mp3" controls preload="auto" autobuffer></audio></td>';
+	        echo '<td><audio src="https://api.twilio.com/2010-04-01/Accounts/'.$accountsid.'/Recordings/'.$recording->Sid.'.mp3" controls preload="auto" autobuffer></audio></td>';
 	        echo "</tr>";
 	    }
 	    echo "</table>";
