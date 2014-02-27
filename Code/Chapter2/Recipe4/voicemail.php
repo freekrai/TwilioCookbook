@@ -1,4 +1,7 @@
 <?php
+	error_reporting(E_ALL | E_STRICT);
+	ini_set('display_errors', 1);
+
  	include 'Services/Twilio.php';
 	include("config.php");
 	
@@ -7,30 +10,36 @@
 	$transcribe = true;
 
 	$client = new Services_Twilio($accountsid, $authtoken);
+
+	header("content-type: text/xml");
 	$response = new Services_Twilio_Twiml();
 
     // setup from email headers
 	$headers = 'From: voicemail@mywebsite.com' . "\r\n" .'Reply-To: voicemail@mywebsite.com' . "\r\n" .'X-Mailer: Twilio Voicemail';
 
 	// grab the to and from phone numbers
-	$from = strlen($_REQUEST['From']) ? $_REQUEST['From'] : $_REQUEST['Caller'];
-	$to = strlen($_REQUEST['To']) ? $_REQUEST['To'] : $_REQUEST['Called'];
-	
-	if( strtolower($_REQUEST['TranscriptionStatus']) == "completed") {
-		$body = "You have a new voicemail from " . ($from) . "\n\n";
-		$body .= "Text of the transcribed voicemail:\n{$_REQUEST['TranscriptionText']}.\n\n";
-		$body .= "Click this link to listen to the message:\n{$_REQUEST['RecordingUrl']}.mp3";
-		mail($myemail, "New Voicemail Message from " . ($from), $body, $headers);
-		die;
-	} else if(strtolower($_REQUEST['TranscriptionStatus']) == "failed") {
-		$body = "You have a new voicemail from ".($from)."\n\n";
-		$body .= "Click this link to listen to the message:\n{$_REQUEST['RecordingUrl']}.mp3";
-		mail($myemail, "New Voicemail Message from " . ($from), $body, $headers);
-		die;
-	} else if(strlen($_REQUEST['RecordingUrl'])) {
+	$from = isset($_REQUEST['From']) ? $_REQUEST['From'] : ( isset($_REQUEST['Caller']) ? $_REQUEST['Caller'] : '' );
+	$to = isset($_REQUEST['To']) ? $_REQUEST['To'] : ( isset($_REQUEST['Called']) ? $_REQUEST['Called'] : '' );
+	if( isset($_REQUEST['TranscriptionStatus']) ){
+		switch( $_REQUEST['TranscriptionStatus'] ){
+			case "completed":
+				$body = "You have a new voicemail from " . ($from) . "\n\n";
+				$body .= "Text of the transcribed voicemail:\n{$_REQUEST['TranscriptionText']}.\n\n";
+				$body .= "Click this link to listen to the message:\n{$_REQUEST['RecordingUrl']}.mp3";
+				mail($myemail, "New Voicemail Message from " . ($from), $body, $headers);
+				die;
+				break;
+			case "failed":
+				$body = "You have a new voicemail from ".($from)."\n\n";
+				$body .= "Click this link to listen to the message:\n{$_REQUEST['RecordingUrl']}.mp3";
+				mail($myemail, "New Voicemail Message from " . ($from), $body, $headers);
+				die;
+				break;
+		}
+	}else if( isset($_REQUEST['RecordingUrl']) ) {
 		$response->say("Thanks.  Good bye.");
 		$response->hangup();
-		if(strlen($transcribe) && strtolower($transcribe) != 'true') {
+		if(isset($transcribe) && strtolower($transcribe) != 'true') {
 			$body = "You have a new voicemail from ".($from)."\n\n";
 			$body .= "Click this link to listen to the message:\n{$_REQUEST['RecordingUrl']}.mp3";
 			mail($myemail, "New Voicemail Message from " . ($from), $body, $headers);
@@ -43,5 +52,5 @@
 			$params = array();
 		$response->record($params);
 	}
-	$response->Respond(); 
+	echo $response; 
 ?>
