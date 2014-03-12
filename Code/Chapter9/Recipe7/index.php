@@ -201,7 +201,7 @@ $app->get('/delete', function() use ($app){
 	$sql = "SELECT * FROM numbers WHERE user_id='{$user['ID']}';";
 	$res = $pdo->query( $sql );
 	while( $number = $res->fetch() ){
-		releaseNumber($user['sid'],$user['token'],$number['sid'])
+		releaseNumber($user['sid'],$user['token'],$number['sid']);
 	}
 	$account = $client->accounts->get($user['sid']);
 	$account->update(array(
