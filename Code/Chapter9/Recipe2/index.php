@@ -38,7 +38,7 @@ $app->get('/signup', function() use ($app){
         $app->render( 'register', array(),'layout' );
 });
 $app->post('/signup', function() use ($app){
-	$client = new Services_Twilio($app->store('twilio.accountsid'), $app->store('twilio.authtoken') );
+	$client = new Services_Twilio($app->option('twilio.accountsid'), $app->option('twilio.authtoken') );
 	extract($_POST);
 	$timestamp = strtotime( $timestamp );
 	$subaccount = $client->accounts->create(array(
