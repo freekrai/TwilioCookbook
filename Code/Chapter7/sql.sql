@@ -8,5 +8,5 @@ CREATE TABLE reminders(
 	PRIMARY KEY (`id`),
 	KEY (`message`),
 	KEY (`phone_number`),
-	UNIQUE KEY (`message`,`timestamp`,`phone_numer`)
+	UNIQUE KEY (`message`,`timestamp`,`phone_number`)
 );
