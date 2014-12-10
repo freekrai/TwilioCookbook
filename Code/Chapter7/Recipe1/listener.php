@@ -29,7 +29,7 @@ if( isset($_POST['Body']) ){
 			$pdo = Db::singleton();
 			$pdo->exec($sql);
 			$qid = $pdo->lastInsertId();
-			print_sms_reply(“Your reminder has been set.”);
+			print_sms_reply("Your reminder has been set.");
 		}
 	}
 // 	end actions
