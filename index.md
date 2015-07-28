@@ -2,8 +2,8 @@
 layout: page
 ---
 
-<a href="http://amzn.to/16tAjHV"><img class="size-medium wp-image-21 " alt="Twilio Cookbook" src="http://twiliocookbook.com/wp/wp-content/uploads/2014/03/518Da899KqL-243x300.jpg" width="243" height="300" /></a>
-<a href="http://amzn.to/QlQ2bZ"><img class="size-medium wp-image-33 " alt="Twilio Cookbook: Second Edition" src="http://twiliocookbook.com/wp/wp-content/uploads/2014/03/image-243x300.jpg" width="243" height="300" /></a>
+<a href="http://amzn.to/16tAjHV"><img class="size-medium wp-image-21 " alt="Twilio Cookbook" src="/wp-content/uploads/2014/03/518Da899KqL-243x300.jpg" width="243" height="300" /></a>
+<a href="http://amzn.to/QlQ2bZ"><img class="size-medium wp-image-33 " alt="Twilio Cookbook: Second Edition" src="/wp-content/uploads/2014/03/image-243x300.jpg" width="243" height="300" /></a>
 
 Over 70 easy-to-follow recipes ranging from walking you through key features of Twilio&#8217;s API to building advanced telephony applications
 
