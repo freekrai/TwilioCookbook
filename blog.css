@@ -345,6 +345,6 @@ h6, .h6 {
 }
 
 h2 a.link, h2 a.link:active, h2 a.link:visited {
-    color: #b5190e;
-    text-decoration: underline;
+    color: #b5190e !important;
+    text-decoration: underline !important;
 }
