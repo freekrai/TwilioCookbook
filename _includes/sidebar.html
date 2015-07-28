@@ -11,13 +11,22 @@
 	<hr>
 	<p>You can follow me at <strong><a href="http://twitter.com/freekrai">Twitter</a>, <a href="https://plus.google.com/110703673421158974551/posts">Google+</a>, <a href="https://github.com/freekrai">Github.</a></strong> and my <strong><a href="http://rogerstringer.com">blog.</a></strong></p>
 	<hr>
-	<p><a class="btn btn-danger" href="/about/">Read More</a></p>
+	<p><a class="btn btn-danger" href="/about/" style="width:100%">Read More</a></p>
 </div>
 <div class="sidebar-module sidebar-module-inset">
 	<h4>How Can I Report A Bug?</h4>
 	<p>I'm a human, a human can make some mistakes. You can report it to me via&nbsp;<a href="https://github.com/freekrai/TwilioCookbook/issues">Github Issues</a>&nbsp;or contact me at the social networks above.</p>
 	<hr>
 	<p>You can also find the most recent, up-to-date copies of the code here at the book's <a href="https://github.com/freekrai/TwilioCookbook/">github repo</a></p>
+</div>
+
+<div class="sidebar-module sidebar-module-inset">
+	<h4>Recent Blog Posts</h4>
+	<ol class="list-unstyled">
+	{% for post in site.posts %}
+		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</ol>
 </div>
 <!--
 <div class="sidebar-module sidebar-module-inset">
