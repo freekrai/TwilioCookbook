@@ -343,3 +343,8 @@ h6, .h6 {
   box-shadow: none;
   top: 0;
 }
+
+h2 a.link, h2 a.link:active, h2 a.link:visited {
+    color: #b5190e;
+    text-decoration: underline;
+}
