@@ -15,6 +15,6 @@ format: aside
 tumblog:
   - Articles
 ---
-Since the second edition of the Twilio Cookbook just came out, I thought I&#8217;d redo this site <img src="http://twiliocookbook.com/wp/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+Since the second edition of the Twilio Cookbook just came out, I thought I&#8217;d redo this site <img src="/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
 
 I also wanted to add a blog area, so I can post updates, more Twilio tricks, and just all around fun stuff.
