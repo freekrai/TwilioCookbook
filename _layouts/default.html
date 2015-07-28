@@ -11,7 +11,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/blog.css" rel="stylesheet">
+	<link href="/blog.css?v=1234" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -30,11 +30,11 @@
 	<div class="blog-masthead">
 		<div class="container">
 			<nav class="blog-nav">
-				<a class="blog-nav-item active" href="/">Home</a>
-				<a class="blog-nav-item" href="/toc/index.html">Table Of Contents</a>
-				<a class="blog-nav-item" href="/about/index.html">About The Author</a>
-				<a class="blog-nav-item" href="/blog/index.html">Blog</a>
-				<a class="blog-nav-item" href="/contact/index.html">Contact</a>
+				<a class="blog-nav-item{% if page.url == "/" %} active{% endif %}" href="/">Home</a>
+				<a class="blog-nav-item{% if page.url == "/toc/index.html" %} active{% endif %}" href="/toc/index.html">Table Of Contents</a>
+				<a class="blog-nav-item{% if page.url == "/about/index.html" %} active{% endif %}" href="/about/index.html">About The Author</a>
+				<a class="blog-nav-item{% if page.url == "/blog/index.html" %} active{% endif %}" href="/blog/index.html">Blog</a>
+				<a class="blog-nav-item{% if page.url == "/contact/index.html" %} active{% endif %}" href="/contact/index.html">Contact</a>
 				<a class="blog-nav-item" href="http://amzn.to/QlQ2bZ">Get It Now</a>
 			</nav>
 		</div>
