@@ -3,7 +3,7 @@ title: Table Of Contents
 author: Roger Stringer
 layout: page
 ---
-<img src="http://twiliocookbook.com/wp/wp-content/uploads/2014/03/image-243x300.jpg" alt="image" width="243" height="300" class="alignright size-medium wp-image-33" />
+<img src="http://twiliocookbook.com/wp/wp-content/uploads/2014/03/image-243x300.jpg" alt="image" width="243" height="300" class="pull-right size-medium wp-image-33" />
 
 ### PREFACE
 
