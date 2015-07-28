@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="blog-post">
+	<h2 class="blog-post-title">
+	{% if post.link-url %}
+		<a href="{{ page.link-url }}" class="link">{{ page.title }} <span class="link-arrow">&rarr;</span></a>
+	{% else %}
+		<a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+	{% endif %}
+	</h2>
+	<p class="blog-post-meta">
+		{{ page.date | date: "%B %-d, %Y" }}  /
+		<a href="{{ site.baseurl }}{{ page.url }}">permalink</a>
+	</p>
+	{{ content }}
+</div>
