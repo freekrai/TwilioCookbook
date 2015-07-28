@@ -23,7 +23,7 @@
 <div class="sidebar-module sidebar-module-inset">
 	<h4>Recent Blog Posts</h4>
 	<ol class="list-unstyled">
-	{% for post in site.posts %}
+	{% for post in site.posts  limit:5%}
 		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 	{% endfor %}
 	</ol>
