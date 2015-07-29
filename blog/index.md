@@ -22,11 +22,18 @@ layout: page
 		</div>
 	{% endfor %}
 </div>
-<!--
+
 <nav>
 	<ul class="pager">
-		<li><a href="#">Previous</a></li>
-		<li><a href="#">Next</a></li>
+{% if page.previous.url %}
+	<li><a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}"><i class="icon-chevron-left"></i> Previous</a></li>
+{% else %}
+	<li class="disabled"><a href="#"><i class="icon-chevron-left"></i> Previous</a></li>
+{% endif %}
+{% if page.next.url %}
+	<li><a href="{{page.next.url}}" title="Next Post: {{page.next.title}}"><i class="icon-chevron-right"></i> Next</a></li>
+{% else %}
+	<li class="disabled"><a href="#"><i class="icon-chevron-right"></i> Next</a></li>
+{% endif %}
 	</ul>
 </nav>
--->

@@ -1,27 +1,33 @@
 <div class="sidebar-module sidebar-module-inset">
 	<h4>Where do I find it?</h4>
-	<p>You can order the Twilio Cookbook: Second Edition here at <strong><a href="http://amzn.to/QlQ2bZ">Amazon.</a></strong>
-	</p><hr>
+	<hr />
+	<p>You can order the Twilio Cookbook: Second Edition here at <strong><a href="http://amzn.to/QlQ2bZ">Amazon.</a></strong></p>
+	<hr />
 	<p>You can order the original, first edition of the Twilio Cookbook here at <strong><a href="http://amzn.to/16tAjHV">Amazon.</a></strong></p>
 </div>
 <div class="sidebar-module sidebar-module-inset">
 	<h4>What Wrote It?</h4>
+	<hr />
+{% comment %}
 <img alt="" src="http://1.gravatar.com/avatar/49d7a2e94ec557de5d277f82cdabc2a3?s=48&amp;d=mm&amp;r=g" srcset="http://1.gravatar.com/avatar/49d7a2e94ec557de5d277f82cdabc2a3?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo grav-hashed grav-hijack pull-left" height="48" width="48" id="grav-49d7a2e94ec557de5d277f82cdabc2a3-0" style="padding:2px;">
-	<p>I'm <a href="http://rogerstringer.com">Roger Stringer</a>. I am a father, writer, developer, chef, entrepreneur and lover of movies, music and books. Founder of <a href="http://flybase.io">Flybase</a>.</p>
-	<hr>
+{% endcomment %}
+	<p>I'm <a href="http://rogerstringer.com">Roger Stringer</a>. I am a father, writer, devops engineer, generalist software developer, chef, entrepreneur and lover of movies, music and books. Founder of <a href="http://flybase.io">Flybase</a>.</p>
+	<hr />
 	<p>You can follow me at <strong><a href="http://twitter.com/freekrai">Twitter</a>, <a href="https://plus.google.com/110703673421158974551/posts">Google+</a>, <a href="https://github.com/freekrai">Github.</a></strong> and my <strong><a href="http://rogerstringer.com">blog.</a></strong></p>
-	<hr>
+	<hr />
 	<p><a class="btn btn-danger" href="/about/" style="width:100%">Read More</a></p>
 </div>
 <div class="sidebar-module sidebar-module-inset">
 	<h4>How Can I Report A Bug?</h4>
+	<hr />
 	<p>I'm a human, a human can make some mistakes. You can report it to me via&nbsp;<a href="https://github.com/freekrai/TwilioCookbook/issues">Github Issues</a>&nbsp;or contact me at the social networks above.</p>
-	<hr>
+	<hr />
 	<p>You can also find the most recent, up-to-date copies of the code here at the book's <a href="https://github.com/freekrai/TwilioCookbook/">github repo</a></p>
 </div>
 
 <div class="sidebar-module sidebar-module-inset">
 	<h4>Recent Blog Posts</h4>
+	<hr />
 	<ol class="list-unstyled">
 	{% for post in site.posts  limit:5%}
 		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
