@@ -26,11 +26,11 @@
 	    $_SESSION['username'] = $username;
 	    $_SESSION['password'] = $password;
 	    $client = new Services_Twilio($accountsid, $authtoken);
-	    $content = "Your newly generated password is ".$password." To repeat that, your password is ".$password;
+	    $content = "<Response><Say>Your newly generated password is ".$password." To repeat that, your password is ".$password."</Say></Response>";
 	    $item = $client->account->$method->create(
 	                $fromNumber,    // The Twilio number we're sending from
 	                $phoneNum,      // The user's phone number
-	                $content
+	                "http://twimlets.com/echo?Twiml=" . urlencode($content) // url encoded twiml
 	            );
 	    $message = "A new password has been generated and sent to your phone number.";
 	    return $message;
