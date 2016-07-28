@@ -14,9 +14,9 @@
 	
 	//	sites to check...
 	$sites = array(
-		“http://google.com”=> “Google”,
-		“http://yahoo.com”=>”Yahoo”,
-		“http://starbucks.com”=>”Star Bucks”
+		"http://google.com" => "Google",
+		"http://yahoo.com" => "Yahoo",
+		"http://starbucks.com" => "Star Bucks"
 	);
 
 ?>

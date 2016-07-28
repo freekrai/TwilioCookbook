@@ -31,12 +31,12 @@ if( isset($_POST['Body']) ){
 		if( $actions[0] == 'cancel' ){
 			$pdo = Db::singleton();
 			$pdo->exec("DELETE reminders WHERE `message`='{$msg}' AND `phone_number`='{$phone}';");
-			print_sms_reply(“Your reminder has been cancelled.”);
+			print_sms_reply("Your reminder has been cancelled.");
 		}else if( $actions[0] == 'add' ){
 			//	second phone number from $actions[1]
 			$pdo = Db::singleton();
 			$pdo->exec("UPDATE reminders SET `phone_number2`='{$actions[1]}' WHERE `message`='{$msg}' AND `phone_number`='{$phone}';");
-			print_sms_reply(“Your reminder has been updated.”);
+			print_sms_reply("Your reminder has been updated.");
 		}else{
 			//	new reminder
 			$timestamp = strtotime( $action );
@@ -44,7 +44,7 @@ if( isset($_POST['Body']) ){
 			$pdo = Db::singleton();
 			$pdo->exec($sql);
 			$qid = $pdo->lastInsertId();
-			print_sms_reply(“Your reminder has been set.”);
+			print_sms_reply("Your reminder has been set.");
 		}
 	}
 // 	end actions
